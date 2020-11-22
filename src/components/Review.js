@@ -18,11 +18,17 @@ const Review = () => {
   const handleBackward = (id) => {
     console.log("Backward Handler");
     console.log(id);
-    if (currentId === 1) {
+    if (currentId <= 1) {
       setCurrentId(people.length);
     } else {
       setCurrentId(id - 1);
     }
+  };
+
+  const handleSurprise = () => {
+    const randomId = Math.ceil(Math.random() * people.length);
+    console.log(randomId);
+    setCurrentId(randomId);
   };
 
   return (
@@ -57,7 +63,9 @@ const Review = () => {
                 {">"}
               </span>
             </div>
-            <button className="btn btn-surprise">Surprise Me</button>
+            <button className="btn btn-surprise" onClick={handleSurprise}>
+              Surprise Me
+            </button>
           </article>
         ))}
     </section>
