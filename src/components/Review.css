@@ -1,0 +1,59 @@
+.review-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.person-active-card {
+  width: 500px;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 0.5rem 2rem;
+}
+
+.person-image-wrapper {
+  height: 150px;
+  width: 150px;
+  margin: 1rem auto;
+}
+.person-image-wrapper .person-image {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.person-job {
+  text-transform: uppercase;
+  color: #49a6e9;
+  font-size: 0.85rem;
+}
+.person-name {
+  text-transform: capitalize;
+}
+.person-text {
+  font-size: 0.8rem;
+}
+
+.arrows {
+  font-size: 1.5rem;
+  color: #49a6e9;
+  font-weight: 900;
+  width: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.btn-surprise {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  background-color: #49a6e9;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
