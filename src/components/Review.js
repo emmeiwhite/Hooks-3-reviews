@@ -5,17 +5,33 @@ import "./Review.css";
 
 const Review = () => {
   const [currentId, setCurrentId] = useState(1);
-  const handleForward = (id) => {};
+  const handleForward = (id) => {
+    console.log("Forward Handler");
+    console.log(id);
+    if (currentId === 4) {
+      setCurrentId(1);
+    } else {
+      setCurrentId(id + 1);
+    }
+  };
 
-  const handleBackward = (id) => {};
+  const handleBackward = (id) => {
+    console.log("Backward Handler");
+    console.log(id);
+    if (currentId === 1) {
+      setCurrentId(people.length);
+    } else {
+      setCurrentId(id - 1);
+    }
+  };
 
   return (
     <section className="review-wrapper">
       <h3>Our Reviews</h3>
       {people
-        .filter((person) => person.id == currentId)
+        .filter((person) => person.id === currentId)
         .map((person) => (
-          <article className="person-active-card">
+          <article className="person-active-card" key={person.id}>
             <div className="person-image-wrapper">
               <img
                 className="person-image"
@@ -28,10 +44,16 @@ const Review = () => {
             <p className="person-text">{person.text}</p>
 
             <div className="arrows">
-              <span className="left-arrow" onClick={handleForward}>
+              <span
+                className="left-arrow"
+                onClick={() => handleBackward(person.id)}
+              >
                 {"<"}
               </span>
-              <span className="right-arrrow" onClick={handleBackward}>
+              <span
+                className="right-arrrow"
+                onClick={() => handleForward(person.id)}
+              >
                 {">"}
               </span>
             </div>
